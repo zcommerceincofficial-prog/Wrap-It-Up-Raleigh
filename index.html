@@ -1512,10 +1512,24 @@
     btn.disabled = true;
     btn.textContent = 'Sending…';
 
-    // TODO: replace setTimeout with fetch() to your real endpoint, then redirect on success
-    setTimeout(function() {
+    var data = {
+      first_name: document.getElementById('fn').value,
+      last_name:  document.getElementById('ln').value,
+      phone:      document.getElementById('ph').value,
+      email:      document.getElementById('em').value,
+      business_name: document.getElementById('biz').value,
+      vehicle_type:  document.getElementById('vtype').value,
+      message:    document.getElementById('msg').value
+    };
+    fetch('https://services.leadconnectorhq.com/hooks/MqgAfS9A5Heliyxxurf9/webhook-trigger/b6cd641c-d023-48ec-b18d-84fdaea5f278', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .catch(function() {})
+    .finally(function() {
       window.location.href = '/thank-you';
-    }, 600);
+    });
   });
 </script>
 
