@@ -381,18 +381,26 @@
     }
 
     .cl-logo {
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-      padding: 14px 28px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      min-width: 130px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      opacity: .75;
+      transition: opacity .2s;
     }
+
+    .cl-logo:hover { opacity: 1; }
+
+    .cl-logo img {
+      max-height: 54px;
+      max-width: 160px;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(100%) brightness(1.4);
+      transition: filter .2s;
+    }
+
+    .cl-logo:hover img { filter: none; }
 
     /* ââ WHY FLEET WRAPS âââââââââââââââââââââââââââââââââââââââââ */
     #why { background: var(--bg-alt); }
@@ -1046,12 +1054,15 @@
   <div class="wrap">
     <p class="clients-label">Trusted by businesses across the Triangle</p>
     <div class="logo-strip">
-      <!-- REPLACE each .cl-logo with a real client logo: <img src="client-logo.png" alt="Company Name"> -->
-      <div class="cl-logo">Client Logo</div>
-      <div class="cl-logo">Client Logo</div>
-      <div class="cl-logo">Client Logo</div>
-      <div class="cl-logo">Client Logo</div>
-      <div class="cl-logo">Client Logo</div>
+      <div class="cl-logo">
+        <img src="images/logo-big-muscle-junk-removal.webp" alt="Big Muscle Junk Removal" width="264" height="280" loading="lazy">
+      </div>
+      <div class="cl-logo">
+        <img src="images/logo-owens-ace-hardware.webp" alt="Owens Ace Hardware" width="400" height="90" loading="lazy">
+      </div>
+      <div class="cl-logo">
+        <img src="images/logo-cpm-painting.webp" alt="CPM Painting" width="368" height="280" loading="lazy">
+      </div>
     </div>
   </div>
 </section>
