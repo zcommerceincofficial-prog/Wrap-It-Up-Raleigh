@@ -959,7 +959,13 @@
       .gallery-grid { grid-template-columns: 1fr; }
       .g-item:first-child { grid-column: span 1; }
       .f-row { grid-template-columns: 1fr; }
-      .qform { padding: 28px 22px; }
+      .qform { padding: 20px 18px; }
+      .f-group { margin-bottom: 10px; }
+      .f-group label { margin-bottom: 3px; font-size: 11px; }
+      .f-group input, .f-group select, .f-group textarea { padding: 10px 12px; font-size: 14px; }
+      .form-head { font-size: 18px; margin-bottom: 2px; }
+      .form-sub { font-size: 12px; margin-bottom: 14px; }
+      .f-submit { padding: 14px; font-size: 15px; }
       .ft-inner { flex-direction: column; align-items: center; text-align: center; }
     }
 
@@ -986,7 +992,7 @@
       </a>
       <div class="hd-right">
         <span class="hd-phone">&#9742; 919.889.9865</span>
-        <a href="#quote" class="btn btn-orange">Get Free Quote</a>
+        <a href="#fleetForm" class="btn btn-orange">Get Free Quote</a>
       </div>
     </div>
   </div>
@@ -1011,7 +1017,7 @@
         </h1>
         <p class="hero-sub">Take 60 seconds</p>
         <div class="hero-actions">
-          <a href="#quote" class="btn btn-orange btn-lg">Get Free Quote</a>
+          <a href="#fleetForm" class="btn btn-orange btn-lg">Get Free Quote</a>
         </div>
         <div class="trust-row">
           <div class="tbadge">
@@ -1435,35 +1441,22 @@
             <input type="text" id="biz" name="business_name" placeholder="ABC Plumbing LLC" required autocomplete="organization">
           </div>
 
-          <div class="f-row">
-            <div class="f-group">
-              <label for="vtype">Vehicle Type *</label>
-              <select id="vtype" name="vehicle_type" required>
-                <option value="" disabled selected>Select type&hellip;</option>
-                <option value="cargo_van">Cargo Van / Sprinter</option>
-                <option value="pickup_truck">Pickup Truck</option>
-                <option value="box_truck">Box Truck</option>
-                <option value="trailer">Trailer</option>
-                <option value="mixed_fleet">Mixed Fleet</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="f-group">
-              <label for="fsize">Fleet Size *</label>
-              <select id="fsize" name="fleet_size" required>
-                <option value="" disabled selected>How many vehicles?</option>
-                <option value="1">1 vehicle</option>
-                <option value="2-4">2–4 vehicles</option>
-                <option value="5-10">5–10 vehicles</option>
-                <option value="11-25">11–25 vehicles</option>
-                <option value="25+">25+ vehicles</option>
-              </select>
-            </div>
+          <div class="f-group">
+            <label for="vtype">Vehicle Type *</label>
+            <select id="vtype" name="vehicle_type" required>
+              <option value="" disabled selected>Select type&hellip;</option>
+              <option value="cargo_van">Cargo Van / Sprinter</option>
+              <option value="pickup_truck">Pickup Truck</option>
+              <option value="box_truck">Box Truck</option>
+              <option value="trailer">Trailer</option>
+              <option value="mixed_fleet">Mixed Fleet</option>
+              <option value="other">Other</option>
+            </select>
           </div>
 
           <div class="f-group">
             <label for="msg">Tell us about your project (optional)</label>
-            <textarea id="msg" name="message" placeholder="Any specific ideas, timeline, or details about your fleet&hellip;"></textarea>
+            <textarea id="msg" name="message" rows="2" placeholder="Any specific ideas, timeline, or details about your fleet&hellip;" style="min-height:64px;"></textarea>
           </div>
 
           <button type="submit" class="f-submit">Get My Free Quote &rarr;</button>
