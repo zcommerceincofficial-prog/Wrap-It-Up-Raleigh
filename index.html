@@ -1510,13 +1510,12 @@
 
     var btn = this.querySelector('.f-submit');
     btn.disabled = true;
-    btn.textContent = 'Sendingâ¦';
+    btn.textContent = 'Sending…';
 
-    // Simulate success for now — replace with real fetch() to your endpoint
+    // TODO: replace setTimeout with fetch() to your real endpoint, then redirect on success
     setTimeout(function() {
-      btn.textContent = 'â Request Received — Weâll be in touch within 1 business day!';
-      btn.style.background = '#2D7A44';
-    }, 800);
+      window.location.href = '/thank-you';
+    }, 600);
   });
 </script>
 

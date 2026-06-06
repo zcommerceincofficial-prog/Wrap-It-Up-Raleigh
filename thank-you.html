@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Wrap It Up Raleigh</title>
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  </noscript>
+
+  <style>
+    :root {
+      --bg:        #0C0C0C;
+      --bg-card:   #161616;
+      --pink:      #EC1C7D;
+      --pink-dk:   #C4135F;
+      --teal:      #7ECCC5;
+      --green:     #1B3A2E;
+      --cream:     #F0E6CE;
+      --white:     #FFFFFF;
+      --text:      #D8D8D8;
+      --muted:     #7A7A7A;
+      --border:    #222222;
+      --ff-head:   'Bebas Neue', sans-serif;
+      --ff-body:   'Inter', sans-serif;
+      --r:         8px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--ff-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 24px;
+      display: flex;
+      justify-content: center;
+    }
+    header img { height: 56px; width: auto; display: block; }
+
+    /* Main centered card */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 56px 24px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* soft brand glow backdrop */
+    main::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 55% at 50% 30%, rgba(236,28,125,.10) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 50% 100%, rgba(126,204,197,.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 620px;
+      text-align: center;
+    }
+
+    /* Check badge */
+    .check {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 30px;
+      border-radius: 50%;
+      background: rgba(236,28,125,.12);
+      border: 1px solid rgba(236,28,125,.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .check svg { width: 44px; height: 44px; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: var(--ff-head);
+      font-size: clamp(46px, 8vw, 78px);
+      line-height: .98;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+    h1 span { color: var(--pink); }
+
+    .msg {
+      font-size: 19px;
+      color: var(--text);
+      max-width: 480px;
+      margin: 0 auto 8px;
+      line-height: 1.6;
+    }
+
+    .sub {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    /* Phone callout */
+    .phone-row {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 36px;
+    }
+    .phone-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .phone-num {
+      font-family: var(--ff-head);
+      font-size: 46px;
+      letter-spacing: 1px;
+      line-height: 1;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .phone-num:hover { color: var(--pink); }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 32px;
+      border-radius: var(--r);
+      font-family: var(--ff-body);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .4px;
+      text-decoration: none;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all .18s ease;
+    }
+    .btn-pink { background: var(--pink); color: #fff; border-color: var(--pink); }
+    .btn-pink:hover { background: var(--pink-dk); border-color: var(--pink-dk); transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: var(--cream); border-color: rgba(240,230,206,.35); }
+    .btn-ghost:hover { border-color: var(--cream); background: rgba(240,230,206,.07); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 22px 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--cream); }
+
+    @media (max-width: 520px) {
+      .phone-num { font-size: 38px; }
+      .actions { flex-direction: column; }
+      .actions .btn { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/">
+      <img src="https://wrapitupraleigh.com/wp-content/uploads/2025/11/Wrap-it-up-Raleigh-New-Logo-White-1024x789.png"
+           alt="Wrap It Up Raleigh — Graphics + Branding">
+    </a>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="check" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#EC1C7D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+
+      <div class="eyebrow">Request Received</div>
+      <h1>Thank <span>You</span></h1>
+
+      <p class="msg">We got your request — we'll be in touch within <strong style="color:var(--cream);">1 business day</strong>.</p>
+      <p class="sub">Keep an eye on your phone and email. Want to talk sooner? Call or text us now.</p>
+
+      <div class="phone-row">
+        <span class="phone-label">Call or Text</span>
+        <a href="tel:9198899865" class="phone-num">919.889.9865</a>
+      </div>
+
+      <div class="actions">
+        <a href="tel:9198899865" class="btn btn-pink">&#9742;&nbsp; Call 919.889.9865</a>
+        <a href="/" class="btn btn-ghost">Back to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Wrap It Up Raleigh &nbsp;·&nbsp; 2630 Rowland Road Suite 104, Raleigh, NC 27615<br>
+    <a href="tel:9198899865">919.889.9865</a> &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#83eaede5ecc3f4f1e2f3eaf7f6f3f1e2efe6eae4ebade0ecee"><span class="__cf_email__" data-cfemail="3a53545c557a4d485b4a534e4f4a485b565f535d5214595557">[email&#160;protected]</span></a>
+  </footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
