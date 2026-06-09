@@ -993,6 +993,24 @@
     gtag('js', new Date());
     gtag('config', 'AW-18070600135');
   </script>
+
+  <!-- Click-to-Call Conversion -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18070600135/9CmZCKH6vLscEMfz3ahD',
+        'value': 1.0,
+        'currency': 'USD',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
 </head>
 <body>
 
@@ -1405,7 +1423,7 @@
             <div class="c-icon">&#9742;</div>
             <div>
               <div class="c-label">Call or Text</div>
-              <a href="tel:9198899865" class="c-val">919.889.9865</a>
+              <a href="tel:9198899865" class="c-val" onclick="return gtag_report_conversion('tel:9198899865')">919.889.9865</a>
             </div>
           </div>
           <div class="c-row">
@@ -1498,7 +1516,7 @@
       </div>
       <div class="ft-copy">
         &copy; 2025 Wrap It Up Raleigh &nbsp;·&nbsp; 2630 Rowland Road Suite 104, Raleigh, NC 27615<br>
-        <a href="tel:9198899865">919.889.9865</a>
+        <a href="tel:9198899865" onclick="return gtag_report_conversion('tel:9198899865')">919.889.9865</a>
         &nbsp;&nbsp;&#183;&nbsp;&nbsp;
         <a href="/cdn-cgi/l/email-protection#6f060109002f181d0e1f061b1a1f1d0e030a060807410c0002"><span class="__cf_email__" data-cfemail="30595e565f70474251405944454042515c555957581e535f5d">[email&#160;protected]</span></a>
       </div>
