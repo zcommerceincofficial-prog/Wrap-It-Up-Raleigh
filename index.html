@@ -881,6 +881,20 @@
       margin-top: 12px;
     }
 
+    .f-error {
+      display: none;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: #ff6b5b;
+      margin-top: 12px;
+    }
+
+    .f-error.show { display: block; }
+
+    .f-group.invalid input,
+    .f-group.invalid select { border-color: #ff6b5b; }
+
     /* ââ FOOTER ââââââââââââââââââââââââââââââââââââââââââââââââââ */
     footer {
       background: #080808;
@@ -1491,6 +1505,7 @@
           </div>
 
           <button type="submit" class="f-submit">Get My Free Quote &rarr;</button>
+          <p class="f-error" id="formError">Please enter your name, phone number, and email to get your free quote.</p>
           <p class="f-disclaimer">&#128274; Your info is never shared. We respond within 1 business day.</p>
 
         </form>
@@ -1557,9 +1572,42 @@
     }, { passive: true });
   })();
 
+  // Clear invalid styling as the visitor fixes a field
+  ['fn', 'ph', 'em'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', function() {
+      this.closest('.f-group').classList.remove('invalid');
+      document.getElementById('formError').classList.remove('show');
+    });
+  });
+
   // Form submission handler
   document.getElementById('fleetForm').addEventListener('submit', function(e) {
     e.preventDefault();
+
+    var errorEl = document.getElementById('formError');
+    var requiredFields = [
+      { el: document.getElementById('fn'), email: false },
+      { el: document.getElementById('ph'), email: false },
+      { el: document.getElementById('em'), email: true }
+    ];
+
+    var firstInvalid = null;
+    requiredFields.forEach(function(f) {
+      var val = f.el.value.trim();
+      var valid = val.length > 0;
+      if (valid && f.email) {
+        valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+      }
+      f.el.closest('.f-group').classList.toggle('invalid', !valid);
+      if (!valid && !firstInvalid) firstInvalid = f.el;
+    });
+
+    if (firstInvalid) {
+      errorEl.classList.add('show');
+      firstInvalid.focus();
+      return;
+    }
+    errorEl.classList.remove('show');
 
     var btn = this.querySelector('.f-submit');
     btn.disabled = true;
